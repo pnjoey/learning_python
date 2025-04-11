@@ -1,0 +1,11 @@
+{
+    "ttcd_khoi_luong_so_huu_nha_nuoc": "Khối lượng sở hữu nhà nước",
+    "ttcd_ty_le_so_huu_nha_nuoc": "Tỷ lệ sở hữu nhà nước",
+    "ttcd_khoi_luong_so_huu_nuoc_ngoai": "Khối lượng sở hữu nước ngoài",
+    "ttcd_ty_le_so_huu_nuoc_ngoai": "Tỷ lệ sở hữu nước ngoài",
+    "ttcd_khoi_luong_so_huu_khac": "Khối lượng sở hữu khác",
+    "ttcd_ty_le_so_huu_khac": "Tỷ lệ sở hữu khác",
+    "ttcd_ty_le_so_huu_toi_da_ndtnn": "Tỷ lệ sở hữu tối đa NĐTNN",
+    "ttcd_khoi_luong_toi_da_ndtnn_duoc_phep_so_huu": "Khối lượng tối đa NĐTNN được phép sở hữu",
+    "ttcd_khoi_luong_ndtnn_con_duoc_phep_mua": "Khối lượng NĐTNN còn được phép mua"
+}

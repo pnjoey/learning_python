@@ -44,7 +44,7 @@ df = pd.DataFrame(np.random.random(size=(5, 10)), columns=list('abcdefghij'))
 df_24 = df.sum().idxmin()
 # print(df.sum(), df_24)
 
-# How do you count how many unique rows a DataFrame has 
+# How do you count how many unique rows a DataFrame has
 # (i.e. ignore all rows that are duplicates)?
 df = pd.DataFrame(np.random.randint(0, 2, size=(10, 3)))
 df_25 = df.nunique(axis=1)
@@ -61,11 +61,11 @@ df = pd.DataFrame(data, columns=columns)
 df_26 = (df.isna().cumsum(axis=1) == 3).idxmax(axis=1)
 
 # For each group, find the sum of the three greatest values
-df = pd.DataFrame({'grps': list('aaabbcaabcccbbc'), 
+df = pd.DataFrame({'grps': list('aaabbcaabcccbbc'),
                    'vals': [12,345,3,1,45,14,4,52,54,23,235,21,57,3,87]})
 df_27 = df.groupby('grps').apply(lambda x: x.vals.nlargest(3).sum())
 
-# For each group of 10 consecutive integers in 'A' (i.e. (0, 10], (10, 20], ...), 
+# For each group of 10 consecutive integers in 'A' (i.e. (0, 10], (10, 20], ...),
 # calculate the sum of the corresponding values in column 'B'.
 df = pd.DataFrame(np.random.RandomState(8765).randint(1, 101, size=(100, 2)), columns = ["A", "B"])
 df_28 = df.groupby(pd.cut(df['A'], np.arange(0, 101, 10)))['B'].sum()
@@ -75,3 +75,9 @@ df_28 = df.groupby(pd.cut(df['A'], np.arange(0, 101, 10)))['B'].sum()
 
 
 print(df_28)
+
+
+
+
+
+
