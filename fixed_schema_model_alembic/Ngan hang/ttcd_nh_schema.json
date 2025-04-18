@@ -1,0 +1,9 @@
+ttcd_khoi_luong_so_huu_nha_nuoc: float | None = None
+ttcd_ty_le_so_huu_nha_nuoc: float | None = None
+ttcd_khoi_luong_so_huu_nuoc_ngoai: float | None = None
+ttcd_ty_le_so_huu_nuoc_ngoai: float | None = None
+ttcd_khoi_luong_so_huu_khac: float | None = None
+ttcd_ty_le_so_huu_khac: float | None = None
+ttcd_ty_le_so_huu_toi_da_ndtnn: float | None = None
+ttcd_khoi_luong_toi_da_ndtnn_duoc_phep_so_huu: float | None = None
+ttcd_khoi_luong_ndtnn_con_duoc_phep_mua: float | None = None

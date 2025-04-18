@@ -18,7 +18,7 @@ import json
 # with open('chung_khoan_new.json', 'w', encoding='utf-8') as f:
 #     json.dump(df, f, ensure_ascii=False, indent=4)
 
-filename = 'cstc_nh'
+filename = 'tmbctc_bh'
 if 'bh' in filename:
     table_name = 'fs_insurance'
 elif 'nh' in filename:
@@ -34,46 +34,34 @@ with open(f'{filename}.json','r') as f:
 keys = list(data.keys())
 
 # Convert to Model
-# with open(f'{filename}_model.json','w') as file:
-#     if filename.startswith('tmbctc'):
-#         for line in keys:
-#             file.write(f"{line}: Mapped[Decimal | None] = mapped_column (Text, nullable=True)\n")
-#     else:
-#         for line in keys:
-#             file.write(f"{line}: Mapped[Decimal | None] = mapped_column (Numeric(18, 2))\n")
+with open(f'{filename}_model.json','w') as file:
+    for line in keys:
+        file.write(f"{line}: Mapped[Decimal | None] = mapped_column(Numeric(18, 2))\n")
 
 # Convert to Schema
-# with open(f'{filename}_schema.json','w') as file:
-#     if filename.startswith('tmbctc'):
-#         for line in keys:
-#             file.write(f'{line}: str | None = None\n')
-#     else:
-#         for line in keys:
-#             file.write(f'{line}: float | None = None\n')
+with open(f'{filename}_schema.json','w') as file:
+    for line in keys:
+        file.write(f'{line}: float | None = None\n')
 #
 # Convert to Alembic
-with open(f'{filename}_alembic.json','w') as file:
-    if filename.startswith('tmbctc'):
-        for line in keys:
-            file.write(f'op.add_column(\'{table_name}\', sa.Column(\'{line}\', sa.Text(), nullable=True))\n')
-    else:
-        for line in keys:
-            file.write(f'op.add_column(\'{table_name}\', sa.Column(\'{line}\', a.Numeric(precision=18, scale=2), nullable=True))\n')
+# with open(f'{filename}_alembic.json','w') as file:
+#     for line in keys:
+#         file.write(f'op.add_column(\'{table_name}\', sa.Column(\'{line}\', a.Numeric(precision=18, scale=2), nullable=True))\n')
 
-
-# model: --------
+# --------------------------------------
+# Converting conditions:
+#
+# model: --
 #       col_name: Mapped[Decimal | None] = mapped_column(Numeric(18, 2))
 #   tmbctc:
 #       col_name: Mapped[str] = mapped_column(Text, nullable=True)
 #
-#
-# schema: ---------
+# schema: --
 #       col_name: float | None = None
 #   tmbctc:
 #       col_name: str | None = None
 #
-#
-# alembic: ----------
+# alembic: --
 #   tmbctc:
 #       op.add_column(table_name, sa.Column(col_name, sa.Text(), nullable=True))
 #   others:
